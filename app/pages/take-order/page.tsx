@@ -24,7 +24,7 @@ export default function page() {
                   <>
                     <div className={Style.foodItemListContainer}>
                       {formik?.values?.foodItemList?.map((foodItem, index) => (
-                        <div className={Style.foodItemContainer}>
+                        <div className={Style.foodItemContainer} key={`foodItem__${index}`}>
                           <Field
                             name={`foodItem[${index}].foodName`}
                             render={({ field }:{field: any}) => (

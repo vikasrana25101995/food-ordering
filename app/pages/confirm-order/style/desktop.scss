@@ -1,0 +1,12 @@
+.ConfirmOrderCardBody {
+    :global(.MuiCardContent-root){
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .ConfirmOrderCardItem{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
