@@ -37,6 +37,12 @@ export default function page() {
                               <InputField {...field} label="Quantity" />
                             )}
                           />
+                          <Field
+                            name={`foodItem[${index}].from`}
+                            render={({ field }:{field: any}) => (
+                              <InputField {...field} label="From" />
+                            )}
+                          />
                           {formik?.values?.foodItemList.length > 1 && (
                             <span
                               className={`${Style.closeIcon} material-symbols-outlined`}
@@ -52,7 +58,7 @@ export default function page() {
                       title="Add Item"
                       variant="contained"
                       onClick={() => {
-                        arrayHelpers.push({ foodName: "", quantity: "" });
+                        arrayHelpers.push({ foodName: "", quantity: "", From:"" });
                       }}
                     />
                   </>

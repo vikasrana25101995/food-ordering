@@ -7,6 +7,7 @@ export const initialValues =   {
       {
         foodName: "",
         quantity: "",
+        from:""
       },
     ],
 }
@@ -17,6 +18,7 @@ export const formValidation =  Yup.object().shape({
         Yup.object().shape({
         foodName: Yup.string().required("Required"),
         quantity: Yup.string().required("Required"),
+        from: Yup.string().required("Required")
         })
     ),
 })

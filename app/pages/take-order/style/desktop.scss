@@ -24,7 +24,7 @@
 
     .foodItemContainer{
         display: grid;
-        grid-template-columns: repeat(2, auto) 24px;
+        grid-template-columns: repeat(3, auto) 24px;
         gap: 8px;
         place-content: center;
         align-items: center;
