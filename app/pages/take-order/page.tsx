@@ -1,9 +1,15 @@
+/* TODO: 
+  1.) Form validation 
+  2.) Create the design
+  3.) Internationalisation
+*/
+
 "use client";
 import { InputField } from "@/app/components/input/inputField";
 import { default as Style } from "./style/index.module.scss";
 import { Field, FieldArray, Form, Formik } from "formik";
 import { formValidation, initialValues } from "./constant";
-import {FormButton} from "@/app/components/button/button";
+import { FormButton } from "@/app/components/button/button";
 
 export default function page() {
   return (
@@ -24,22 +30,25 @@ export default function page() {
                   <>
                     <div className={Style.foodItemListContainer}>
                       {formik?.values?.foodItemList?.map((foodItem, index) => (
-                        <div className={Style.foodItemContainer} key={`foodItem__${index}`}>
+                        <div
+                          className={Style.foodItemContainer}
+                          key={`foodItem__${index}`}
+                        >
                           <Field
                             name={`foodItem[${index}].foodName`}
-                            render={({ field }:{field: any}) => (
+                            render={({ field }: { field: any }) => (
                               <InputField {...field} label="Food Name" />
                             )}
                           />
                           <Field
                             name={`foodItem[${index}].quantity`}
-                            render={({ field }:{field: any}) => (
+                            render={({ field }: { field: any }) => (
                               <InputField {...field} label="Quantity" />
                             )}
                           />
                           <Field
                             name={`foodItem[${index}].from`}
-                            render={({ field }:{field: any}) => (
+                            render={({ field }: { field: any }) => (
                               <InputField {...field} label="From" />
                             )}
                           />
@@ -58,7 +67,11 @@ export default function page() {
                       title="Add Item"
                       variant="contained"
                       onClick={() => {
-                        arrayHelpers.push({ foodName: "", quantity: "", From:"" });
+                        arrayHelpers.push({
+                          foodName: "",
+                          quantity: "",
+                          From: "",
+                        });
                       }}
                     />
                   </>
@@ -66,7 +79,7 @@ export default function page() {
               ></FieldArray>
             </div>
             {/* Form Submmit Button */}
-            <FormButton title="Place Order" variant="contained" type="submit"/>
+            <FormButton title="Place Order" variant="contained" type="submit" />
           </Form>
         )}
       </Formik>
