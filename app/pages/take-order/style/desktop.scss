@@ -24,7 +24,7 @@
 
     .foodItemContainer{
         display: grid;
-        grid-template-columns: repeat(3, auto) 24px;
+        grid-template-columns: repeat(3, 1fr);
         gap: 8px;
         place-content: center;
         align-items: center;
@@ -33,7 +33,7 @@
     .foodItemListContainer{
         display: grid;
         gap:10px;
-        margin: 10px 0px;
+        margin: 10px 0px 5px 0px;
         min-height: 70px;
         max-height: 458px;
         overflow: scroll;
@@ -47,5 +47,14 @@
     :global(.foodTypeContainer){
         display: grid;
         grid-template-columns: auto auto auto;
+    }
+
+    .fieldContainer{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .fieldErrorMessageContainer{
+        height: 20px;
     }
 }

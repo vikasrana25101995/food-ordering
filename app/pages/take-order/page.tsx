@@ -7,7 +7,7 @@
 "use client";
 import { InputField } from "@/app/components/input/inputField";
 import { default as Style } from "./style/index.module.scss";
-import { Field, FieldArray, Form, Formik } from "formik";
+import { ErrorMessage, Field, FieldArray, Form, Formik } from "formik";
 import { formValidation, initialValues } from "./constant";
 import { FormButton } from "@/app/components/button/button";
 
@@ -34,24 +34,45 @@ export default function page() {
                           className={Style.foodItemContainer}
                           key={`foodItem__${index}`}
                         >
-                          <Field
-                            name={`foodItem[${index}].foodName`}
-                            render={({ field }: { field: any }) => (
-                              <InputField {...field} label="Food Name" />
-                            )}
-                          />
-                          <Field
-                            name={`foodItem[${index}].quantity`}
-                            render={({ field }: { field: any }) => (
-                              <InputField {...field} label="Quantity" />
-                            )}
-                          />
-                          <Field
-                            name={`foodItem[${index}].from`}
-                            render={({ field }: { field: any }) => (
-                              <InputField {...field} label="From" />
-                            )}
-                          />
+                          <div className={Style.fieldContainer}>
+                            <Field name={`foodItemList[${index}].foodName`}>
+                              {({ field }: { field: any }) => (
+                                <InputField {...field} label="Food Name" />
+                              )}
+                            </Field>
+                            <div className={Style.fieldErrorMessageContainer}>
+                              <ErrorMessage
+                                name={`foodItemList[${index}].foodName`}
+                              />
+                            </div>
+                          </div>
+
+                          <div className={Style.fieldContainer}>
+                            <Field name={`foodItemList[${index}].quantity`}>
+                              {({ field }: { field: any }) => (
+                                <InputField {...field} label="Quantity" />
+                              )}
+                            </Field>
+                            <div className={Style.fieldErrorMessageContainer}>
+                              <ErrorMessage
+                                name={`foodItemList[${index}].quantity`}
+                              />
+                            </div>
+                          </div>
+
+                          <div className={Style.fieldContainer}>
+                            <Field name={`foodItemList[${index}].orderFrom`}>
+                              {({ field }: { field: any }) => (
+                                <InputField {...field} label="From" />
+                              )}
+                            </Field>
+                            <div className={Style.fieldErrorMessageContainer}>
+                              <ErrorMessage
+                                name={`foodItemList[${index}].orderFrom`}
+                              />
+                            </div>
+                          </div>
+
                           {formik?.values?.foodItemList.length > 1 && (
                             <span
                               className={`${Style.closeIcon} material-symbols-outlined`}
@@ -70,7 +91,7 @@ export default function page() {
                         arrayHelpers.push({
                           foodName: "",
                           quantity: "",
-                          From: "",
+                          orderFrom: "",
                         });
                       }}
                     />
