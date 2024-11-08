@@ -34,19 +34,19 @@ export default function TakeOrderPage() {
                                 <InputField
                                   {...field}
                                   label="Food Name"
-                                  data-test-id={`foodItemList_[${index}]_foodName`}
+                                  data-testid={`foodItemList_[${index}]_foodName`}
                                 />
                               )}
                             </Field>
                             <div className={Style.fieldErrorMessageContainer}>
                               <div
-                                data-test-id={`foodItemList_[${index}]_foodName_error`}
+                                data-testid={`foodItemList_[${index}]_foodName_error`}
                               >
                                 <ErrorMessage
                                   name={`foodItemList[${index}].foodName`}
                                   render={(message) => (
                                     <div
-                                      data-test-id={`foodItemList_[${index}]_foodName`}
+                                      data-testid={`foodItemList_[${index}]_foodName`}
                                     >
                                       {message}
                                     </div>
@@ -62,7 +62,7 @@ export default function TakeOrderPage() {
                                 <InputField
                                   {...field}
                                   label="Quantity"
-                                  data-test-id={`foodItemList_[${index}]_quantity`}
+                                  data-testid={`foodItemList_[${index}]_quantity`}
                                 />
                               )}
                             </Field>
@@ -71,7 +71,7 @@ export default function TakeOrderPage() {
                                 name={`foodItemList[${index}].quantity`}
                                 render={(message) => (
                                   <div
-                                    data-test-id={`foodItemList_[${index}]_quantity_error`}
+                                    data-testid={`foodItemList_[${index}]_quantity_error`}
                                   >
                                     {message}
                                   </div>
@@ -86,7 +86,7 @@ export default function TakeOrderPage() {
                                 <InputField
                                   {...field}
                                   label="From"
-                                  data-test-id={`foodItemList_[${index}]_orderFrom`}
+                                  data-testid={`foodItemList_[${index}]_orderFrom`}
                                 />
                               )}
                             </Field>
@@ -95,7 +95,7 @@ export default function TakeOrderPage() {
                                 name={`foodItemList[${index}].orderFrom`}
                                 render={(message) => (
                                   <div
-                                    data-test-id={`foodItemList_[${index}]_orderFrom_error`}
+                                    data-testid={`foodItemList_[${index}]_orderFrom_error`}
                                   >
                                     {message}
                                   </div>
@@ -132,7 +132,7 @@ export default function TakeOrderPage() {
             </div>
             {/* Form Submmit Button */}
             <FormButton
-              data-test-id="foodItemList_place_order_button"
+              data-testid="foodItemList_place_order_button"
               title="Place Order"
               variant="contained"
               type="submit"

@@ -11,14 +11,11 @@ import TakeOrderPage from "@/app/pages/take-order/page";
 describe("The required message on food name on the form submit", () => {
   it("should display an error message when food item is empty", async () => {
     render(<TakeOrderPage />);
-
-    const foodNameInput = screen.getByTestId("foodItemList_0_foodName");
-    const submitButton = screen.getByTestID("foodItemList_place_order_button");
+    const submitButton = screen.getByTestId("foodItemList_place_order_button");
     await userEvent.click(submitButton);
-
-    const errorMessage = screen.getByTestId("foodItemList_0_foodName_error");
+    const errorMessage = screen.getByTestId("foodItemList_[0]_foodName_error");
     expect(errorMessage).toBeInTheDocument();
-    expect(errorMessage).toBe("Required");
+    expect(errorMessage.textContent).toBe("Required");
   });
 });
 
