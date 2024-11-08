@@ -107,6 +107,7 @@ export default function TakeOrderPage() {
                           {formik?.values?.foodItemList.length > 1 && (
                             <span
                               className={`${Style.closeIcon} material-symbols-outlined`}
+                              data-testId={`foodItemList_[${index}]_close`}
                               onClick={() => arrayHelpers.remove(index)}
                             >
                               close
@@ -116,6 +117,7 @@ export default function TakeOrderPage() {
                       ))}
                     </div>
                     <FormButton
+                      data-testid="add_item"
                       title="Add Item"
                       variant="contained"
                       onClick={() => {
