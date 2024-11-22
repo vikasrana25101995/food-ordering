@@ -4,11 +4,12 @@ import { default as Style } from "./style/index.module.scss";
 import { ErrorMessage, Field, FieldArray, Form, Formik } from "formik";
 import { formValidation, initialValues } from "./constant";
 import { FormButton } from "@/app/components/button/button";
+import Header from "@/app/components/header";
 
 export default function TakeOrderPage() {
   return (
     <div className={Style.takeOrderPage}>
-      <h2>Order Food</h2>
+      <Header />
       <Formik
         initialValues={initialValues}
         onSubmit={(values) => console.log(values)}
