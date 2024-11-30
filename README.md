@@ -24,7 +24,7 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 -  Install the docsify in the 
     - Step 1: Install the package   
-            yarn:- yarn global add docsify-cli
+            yarn:- yarn global add docsify-cli 
             npm :- npm i docsify-cli -g
 
     - Step 2: Initialise the docsify
