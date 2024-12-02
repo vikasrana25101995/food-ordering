@@ -19,8 +19,7 @@
 
 ##  Run the image and listen to the 3000 port
 - docker run -p 3000:3000 image_id
-- access the webpage outside the container. here we are binding the container port 3000 with 3000 which provide the access to 
-the webpage
+- access the webpage outside the container. here we are binding the container port 3000 with 3000 which provide the access to the webpage
 
 ##  Run the image in discrete mode
 - docker run -d -p 3000:3000 image_id
@@ -45,10 +44,10 @@ It will give the custom name to the image
 docker build -t mywebapp:01 .
 it will create the app wuth name webapp and version 
 
-docker remove the image 
+## Docker remove the image 
 - docker rmi image_id
 
-docker interactive way to runn the image
+## Docker interactive way to run the image
 - docker run -it image-name
 -it represents interactive terminal
 
@@ -58,11 +57,12 @@ docker tag previous_image_name new_image_name
 ## docker pull of the image
 docker pull image_name
 
-
 ## Docker Volume
 docker run --rm -it -v volumne name:/container_name/ image_id 
-
 
 ## Bind mount
 docker run -v 'path of the file and the folder which changing' image_name
 the bind mount allow us to not to create the image multiple times during the development and show the chnages at the same time,
+
+
+dockerignore
